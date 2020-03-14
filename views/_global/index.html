@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Peca Auction - {% block naslov %}Home{% endblock %}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{ BASE }}assets/css/main.css">
+        <link rel="stylesheet" href="{{ BASE }}assets/libs/font-awesome/css/font-awesome.min.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="banners">
+                <a href="{{ BASE }}" class="banner">
+                <img src="{{ BASE }}assets/img/banner1.jpg" alt="Banner 1">
+                </a>
+            </div>
+            <div class="social-icons">
+                <!--a href="#"><img src="{{ BASE }}assets/img/social/linkedin.png" alt="LI"></a-->
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <!--a href="#"><img src="{{ BASE }}assets/img/social/facebook.png" alt="FB"></a>-->
+                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                <!--a href="#"><img src="{{ BASE }}assets/img/social/twitter.png" alt="Tw"></a-->
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <!--a href="#"><img src="{{ BASE }}assets/img/social/instagram.png" alt="IN"></a-->
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <!--a href="#"><img src="{{ BASE }}assets/img/social/youtube.png" alt="YT"></a-->
+                <a href="https://www.youtube.com/"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+            </div>
+            <div class="search-box">
+                <form method="POST" action="{{ BASE }}search">
+                    <input type="text" name="q" placeholder="Search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <nav id="main-menu">
+                <ul>
+                    <li><a href="{{ BASE }}"><i class="fa fa-home"></i> Home</a></li>
+                    <li><a href="{{ BASE }}categories"><i class="fa fa-list"></i> Categories</a></li>
+                    <li><a href="{{ BASE }}profile"><i class="fa fa-user"></i> Profile</a></li>
+                    <li><a href="{{ BASE }}contact"><i class="fa fa-phone"></i> Contact</a></li>
+                    <li><a href="{{ BASE }}log-out"><i class="fa fa-sign-out"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+        
+        <div class="bookmarks">Loading Bookmarks...</div>
+
+        <footer class="site-footer">
+            &copy; 2020 Peca Auction
+        </footer>
+
+        <script>const BASE = '{{ BASE }}'</script>
+        <!--<script src="{{ BASE }}assets/js/bookmark.js"></script>-->
+    </body>
+</html>

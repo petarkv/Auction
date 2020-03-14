@@ -1,0 +1,19 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+{% apply spaceless %}
+<p>{{ podatak }}</p>
+<div class="categories">
+    {% for category in categories %}
+        <a href="{{ BASE }}category/{{ category.category_id }}" class="category">
+            {{ category.name|escape|title }}
+        </a>
+    {% endfor %}
+</div><br>
+{% endapply %}
+
+<div id="time">
+Date: {{ "now"|date('d. m. Y.') }}  Time: {{ "now"|date('H:i', timezone="Europe/Belgrade")}} CET
+</div>
+
+{% endblock %}
