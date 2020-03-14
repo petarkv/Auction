@@ -129,6 +129,10 @@ body {
     width: 120px;
 }
 
+.bookmark-card {
+    margin-top: 10px;
+}
+
 /*.bookmarks {
     border: 1px solid #000000;
     background: #fefefe;

@@ -45,14 +45,16 @@
             {% block main %}
             {% endblock %}
         </main>
-        
-        <div class="bookmarks">Loading Bookmarks...</div>
-
+        <div class="card bookmark-card">
+        <div class="bookmarks card-body">Loading Bookmarks...</div>
+        </div>
         <footer class="site-footer">
             &copy; 2020 Peca Auction
         </footer>
 
         <script>const BASE = '{{ BASE }}'</script>
         <!--<script src="{{ BASE }}assets/js/bookmark.js"></script>-->
+        <script src="{{ BASE }}assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="{{ BASE }}assets/libs/jquey/dist/jquery.min.js"></script>
     </body>
 </html>
