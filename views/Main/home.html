@@ -3,11 +3,15 @@
 {% block main %}
 {% apply spaceless %}
 <p>{{ podatak }}</p>
-<div class="categories">
+<div class="row">
     {% for category in categories %}
-        <a href="{{ BASE }}category/{{ category.category_id }}" class="category">
-            {{ category.name|escape|title }}
-        </a>
+    <div class="card col-12 col-sm-6 col-md-4 col-lg-3 clo-xl-2 text-center category">
+        <div class="card-body">
+            <a href="{{ BASE }}category/{{ category.category_id }}" class="card-title">
+                {{ category.name|escape|title }}
+            </a>
+        </div>
+    </div>        
     {% endfor %}
 </div><br>
 {% endapply %}

@@ -1,7 +1,7 @@
 {% extends "_global/index.html" %}
 
 {% block main %}
-<a href="#">Add to bookmark</a>
+<a href="#" onclick="addBookmark({{ auction.auction_id }});">Add to bookmark</a>
     <h1>{{ auction.title|escape }}</h1>
     <p>{{ auction.description }}</p>
     <p>Starting Price: {{ auction.starting_price }} EUR</p>
