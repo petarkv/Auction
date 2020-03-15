@@ -31,31 +31,12 @@
     text-align: center;
 }
 
-.auction {
-    display: grid;
-    grid-template-areas: "big-image big-image small-image-1 title title title"
-                         "big-image big-image small-image-2 date1 date2 price";
-    grid-template-columns: 120px 0px 100px auto;
-    border-bottom: 1px solid #444;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
-}
-
-.auction > .auction-title { grid-area: title; border: 1px dashed #444;}
-.auction > .auction-date1 { grid-area: date1; border: 1px dashed #444; text-align: center;}
-.auction > .auction-date2 { grid-area: date2; border: 1px dashed #444; text-align: center;}
-.auction > .auction-price { grid-area: price; border: 1px dashed #444; text-align: right;}
-.auction > .auction-big-image { grid-area: big-image; border: 1px dashed #444; height: 100px; width: 120px;}
-.auction > .image-1 { grid-area: small-image-1; border: 1px dashed #444; width: 80px;}
-.auction > .image-2 { grid-area: small-image-2; border: 1px dashed #444; width: 80px;}
-
-.auction .auction-big-image img {
-    height: 100px; 
-    width: 120px;
-}
-
 .bookmark-card {
     margin-top: 10px;
+}
+
+.width-100-percent {
+    width: 100%;
 }
 
 

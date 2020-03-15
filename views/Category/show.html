@@ -5,20 +5,27 @@
     <p>List of Auctions in this Category:</p> -->
     <ul>
         {% for auction in auctionsInCategory %}
-            <li class="auction">
-                <a href="{{ BASE }}auction/{{ auction.auction_id }}" class="auction-title">
-                    {{ auction.title|escape }}                    
-                </a>
-                <span class="auction-date1">Starts At: {{ auction.starts_at|escape }}</span>
-                <span class="auction-date2">Ends At: {{ auction.ends_at|escape }}</span>
-                <span class="auction-price">Starting Price: {{ auction.starting_price|escape }} &euro;</span>                
+            <li class="auction row">
+                <div class="col-12 col-md-2">
+                    <a href="{{ BASE }}auction/{{ auction.auction_id }}">
+                        <img src="{{ BASE }}assets/uploads/{{ auction.auction_id }}.jpg" 
+                        alt="Big Image -{{auction.auction_id}}" class="width-100-percent">
+                    </a>
+                </div>
 
-                <a href="{{ BASE }}auction/{{ auction.auction_id }}" class="auction-big-image">
-                    <img src="{{ BASE }}assets/uploads/{{ auction.auction_id }}.jpg" alt="Big Image -{{auction.auction_id}}">
-                </a>
+                <div class="col-12 col-md-10">                    
+                    <a href="{{ BASE }}auction/{{ auction.auction_id }}">
+                        {{ auction.title|escape }}                    
+                    </a>
 
-                <img src="#" alt="Small Image 1 -{{auction.auction_id}}" class="auction-small-image image-1">
-                <img src="#" alt="Small Image 2 -{{auction.auction_id}}" class="auction-small-image image-2">
+                    <div class="row">                        
+                        <span class="col-6 col-md-4">Starts At: {{ auction.starts_at|escape }}</span>
+                        <span class="col-6 col-md-4">Ends At: {{ auction.ends_at|escape }}</span>
+                        <span class="col-12 col-md-4">Starting Price: {{ auction.starting_price|escape }} &euro;</span>
+                    </div>
+                </div>      
+                <!--img src="#" alt="Small Image 1 -{{auction.auction_id}}" class="auction-small-image image-1">
+                <img src="#" alt="Small Image 2 -{{auction.auction_id}}" class="auction-small-image image-2"-->
             </li>
         {% endfor %}
     </ul>
