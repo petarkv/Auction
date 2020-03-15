@@ -1,0 +1,26 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+    <!-- <h1>{{ category.name|escape }}</h1>
+    <p>List of Auctions in this Category:</p> -->
+    <ul>
+        {% for auction in auctions %}
+            <li class="auction">
+                <a href="{{ BASE }}auction/{{ auction.auction_id }}" class="auction-title">
+                    {{ auction.title|escape }}                    
+                </a>
+                <span class="auction-date1">Starts At: {{ auction.starts_at|escape }}</span>
+                <span class="auction-date2">Ends At: {{ auction.ends_at|escape }}</span>
+                <span class="auction-price">Starting Price: {{ auction.starting_price|escape }} &euro;</span>                
+
+                <a href="{{ BASE }}auction/{{ auction.auction_id }}" class="auction-big-image">
+                    <img src="{{ BASE }}assets/uploads/{{ auction.auction_id }}.jpg" alt="Big Image -{{auction.auction_id}}">
+                </a>                
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block naslov %}
+Search Results
+{% endblock %}

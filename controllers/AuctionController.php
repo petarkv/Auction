@@ -54,4 +54,25 @@
             }
             return $lastPrice;
         }
+
+        private function normaliseKeywords(string $keywords): string {
+            $keywords = trim($keywords);
+            $keywords = preg_replace('/ +/', ' ', $keywords);
+            return $keywords;
+        }
+
+        public function postSearch() {
+            $auctionModel = new AuctionModel($this->getDatabaseConnection());
+
+            $q = filter_input(INPUT_POST, 'q', FILTER_SANITIZE_STRING);
+
+            $keywords = $this->normaliseKeywords($q);
+
+            $auctions = $auctionModel->getAllBySearch($q);
+
+            /*print_r($auctions);
+            exit;*/
+
+            $this->set('auctions', $auctions);
+        }
     }

@@ -14,6 +14,8 @@
 
         App\Core\Route::get('|^auction/([0-9]+)/?$|', 'Auction', 'show'),
 
+        App\Core\Route::post('|^search/?$|', 'Auction', 'postSearch'),
+
         # API rute:
         App\Core\Route::get('|^api/auction/([0-9]+)/?$|', 'ApiAuction', 'show'),
         App\Core\Route::get('|^api/bookmarks/?$|', 'ApiBookmark', 'getBookmarks'),
