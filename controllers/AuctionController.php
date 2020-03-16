@@ -21,10 +21,13 @@
 
             $this->set('auction', $auction);
 
-            $lastOfferPrice = $this->getLastOfferPrice($id);
+            /*$lastOfferPrice = $this->getLastOfferPrice($auction);
             if (!$lastOfferPrice) {
                 $lastOfferPrice = $auction->starting_price;
-            }
+            }*/
+
+            $offerModel = new OfferModel($this->getDatabaseConnection());
+            $lastOfferPrice = $offerModel->getLastOfferPrice($auction);
             
             $this->set('lastOfferPrice', $lastOfferPrice);
 
@@ -43,9 +46,17 @@
             
         }
 
-        private function getLastOfferPrice($auctionId) {
+        /*private function getLastOfferPrice($auction) {
             $offerModel = new OfferModel($this->getDatabaseConnection());
-            $offers = $offerModel->getAllByAuctionId($auctionId);
+            $lastOffer = $offerModel->getLastByAuctionId($auction->auction_id);
+
+            if ($lastOffer === null) {
+                return $auction->starting_price;
+            }
+
+            return $lastOffer->price;
+
+            /*$offers = $offerModel->getAllByAuctionId($auctionId);
             $lastPrice = 0;
             foreach($offers as $offer) {
                 if ($lastPrice < $offer->price) {
@@ -53,7 +64,7 @@
                 }
             }
             return $lastPrice;
-        }
+        }*/
 
         private function normaliseKeywords(string $keywords): string {
             $keywords = trim($keywords);

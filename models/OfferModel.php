@@ -78,4 +78,31 @@
             });
             return $items;
         }
+
+        public function getLastByAuctionId(int $auctionId) {
+            $sql = 'SELECT * FROM `offer` WHERE `auction_id` = ? ORDER BY `created_at` DESC LIMIT 1;';
+            $prep = $this->getConnection()->prepare($sql);
+
+            if (!$prep) {
+                return null;
+            }
+
+            $res = $prep->execute([ $auctionId ]);
+            if (!$res) {
+                return null;
+            }
+
+            return $prep->fetch(\PDO::FETCH_OBJ);
+        }
+
+        public function getLastOfferPrice($auction) {           
+            $lastOffer = $this->getLastByAuctionId($auction->auction_id);
+
+            if (!$lastOffer) {
+                return $auction->starting_price;
+            }
+
+            return $lastOffer->price;
+        }
+
     }

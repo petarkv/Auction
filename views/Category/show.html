@@ -21,7 +21,8 @@
                     <div class="row">                        
                         <span class="col-6 col-md-4">Starts At: {{ auction.starts_at|escape }}</span>
                         <span class="col-6 col-md-4">Ends At: {{ auction.ends_at|escape }}</span>
-                        <span class="col-12 col-md-4">Starting Price: {{ auction.starting_price|escape }} &euro;</span>
+                        <!--span class="col-12 col-md-4">Starting Price: {{ auction.starting_price|escape }} &euro;</span-->
+                        <span class="col-12 col-md-4">Last Offer Price: {{ auction.last_offer_price|escape }} &euro;</span>
                     </div>
                 </div>      
                 <!--img src="#" alt="Small Image 1 -{{auction.auction_id}}" class="auction-small-image image-1">
