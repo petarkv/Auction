@@ -35,7 +35,7 @@
                         <form method="POST" action="{{ BASE }}search">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="q" class="form-control" placeholder="Search">
+                                    <input type="text" name="q" class="form-control" placeholder="Search" required pattern="[^\s]{2,}">
                                     <button type="submit" class="btn btn-primary input-group-append"><i class="fa fa-search"></i></button>
                                 </div>
                             </div>
