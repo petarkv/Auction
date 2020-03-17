@@ -32,6 +32,14 @@
         App\Core\Route::get('|^user/categories/add/?$|', 'UserCategoryManagement', 'getAdd'),
         App\Core\Route::post('|^user/categories/add/?$|', 'UserCategoryManagement', 'postAdd'),
 
+        App\Core\Route::get('|^user/auctions/?$|', 'UserAuctionManagement', 'auctions'),
+        App\Core\Route::get('|^user/auctions/edit/([0-9]+)/?$|', 'UserAuctionManagement', 'getEdit'),
+        App\Core\Route::post('|^user/auctions/edit/([0-9]+)/?$|', 'UserAuctionManagement', 'postEdit'),
+
+        App\Core\Route::get('|^user/auctions/add/?$|', 'UserAuctionManagement', 'getAdd'),
+        App\Core\Route::post('|^user/auctions/add/?$|', 'UserAuctionManagement', 'postAdd'),
+
+
         # Home Route:
         App\Core\Route::any('|^.*$|', 'Main', 'home')
 

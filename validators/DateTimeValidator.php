@@ -39,13 +39,14 @@
                 $pattern .= '[0-9]{4}\-[0-9]{2}\-[0-9]{2}';
             }
 
-            if ($this->isDateAllowed === true && $this->isTimeAllowed === true) {
+            /*if ($this->isDateAllowed === true && $this->isTimeAllowed === true) {
                 $pattern .= ' ';
-            }
+            }*/
 
-            if ($this->isTimeAllowed === true) {
+            /*if ($this->isTimeAllowed === true) {
                 $pattern .= '[0-9]{2}:[0-9]{2}:[0-9]{2}';
-            }
+                /*$pattern .= '[0-9]{2}:[0-9]{2}(?::[0-9]{2})?';*/
+            #}
 
             $pattern .= '$/';
 

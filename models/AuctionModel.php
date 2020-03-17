@@ -24,7 +24,7 @@
                 'starts_at' => new Field((new DateTimeValidator())->allowDate()->allowTime()),
                 'ends_at' => new Field((new DateTimeValidator())->allowDate()->allowTime()),
                 'is_active' => new Field(new BitValidator()),
-                'category_id' => new Field((new NumberValidator())->setIntegerLength(11))
+                'category_id' => new Field((new NumberValidator())->setIntegerLength(10))
             ];
         }
 
@@ -97,6 +97,10 @@
 
         public function getAllByCategoryId(int $categoryId): array {
             return $this->getAllByFieldName('category_id', $categoryId);            
+        }
+
+        public function getAllByUserId(int $userId): array {
+            return $this->getAllByFieldName('user_id', $userId);            
         }
 
         public function getAllBySearch(string $keywords) {
