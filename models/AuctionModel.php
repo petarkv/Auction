@@ -24,7 +24,9 @@
                 'starts_at' => new Field((new DateTimeValidator())->allowDate()->allowTime()),
                 'ends_at' => new Field((new DateTimeValidator())->allowDate()->allowTime()),
                 'is_active' => new Field(new BitValidator()),
-                'category_id' => new Field((new NumberValidator())->setIntegerLength(10))
+                'category_id' => new Field((new NumberValidator())->setIntegerLength(10)),
+
+                'user_id' => new Field((new NumberValidator())->setIntegerLength(10))
             ];
         }
 
