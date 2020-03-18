@@ -55,9 +55,9 @@
             return $items;
         } 
 
-        /*final public function isFieldNameValid(string $fieldName) {
+        final public function isFieldNameValid(string $fieldName) {
             return boolval(preg_match('|^[a-z][a-z_0-9]+[a-z0-9]$|', $fieldName));
-        }*/
+        }
 
         final private function isFieldValueValid(string $fieldName, $fieldValue): bool {
             $fields = $this->getFields();
